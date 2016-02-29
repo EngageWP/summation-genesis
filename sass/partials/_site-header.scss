@@ -1,0 +1,97 @@
+.site-header {
+	background: #404661;
+	@include transition(top, 0.2s, ease-in-out);
+	width: 100%;
+	.wrap {
+		margin: 15px auto;
+	}
+	.nav-header ul:not( .sub-menu ) > li > a {
+		color: #fff;
+	}
+	&.header-clone {
+		display: none;
+	}
+	&.header-clone.stuck {
+		background: rgba(64,70,97,.95) !important;
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 99;
+		.wrap {
+			margin: 15px auto;
+		}
+	}
+}
+
+.admin-bar .site-header.header-clone.stuck {
+	top: 32px;
+}
+
+/* Title Area
+--------------------------------------------- */
+
+.title-area {
+	float: left;
+}
+
+.header-full-width {
+	.title-area {
+		width: 100%;
+	}
+}
+
+.site-title {
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 1.2;
+	margin-top: 0;
+	a {
+		color: #fff;
+	}
+}
+
+.site-description {
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1.5;
+	position: absolute;
+	top: -9999px;
+}
+
+.site-description,
+.site-title {
+	margin-bottom: 0;
+}
+
+.header-logo {
+	.logo-image.aligncenter {
+		margin: 0;
+	}
+}
+
+/* Widget Area
+--------------------------------------------- */
+
+.site-header {
+	.widget-area {
+		display: table;
+		float: right;
+		text-align: right;
+		width: 740px;
+		.widget_nav_menu {
+			display: table-cell;
+			vertical-align: bottom;
+		}
+	}
+}
+
+@media only screen and (max-width: 1023px) {
+	.header-logo {
+		.logo-image.aligncenter {
+			margin: 0 auto;
+		}
+	}
+	.site-logo-wrap.header-title {
+		text-align: center;
+	}
+}

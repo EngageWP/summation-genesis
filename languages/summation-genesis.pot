@@ -1,0 +1,228 @@
+# Loco Gettext template
+msgid ""
+msgstr ""
+"Project-Id-Version: Summation Genesis Child Theme\n"
+"Report-Msgid-Bugs-To: Ren Ventura <mail@engagewp.com>\n"
+"POT-Creation-Date: 2016-02-26 17:35-0500\n"
+"PO-Revision-Date: 2016-02-26 17:36-0500\n"
+"Last-Translator: \n"
+"Language-Team: Ren Ventura <mail@engagewp.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Revision-Date: Wed Jan 20 2016 10:32:24 GMT-0500 (EST)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: functions.php:8 includes/admin/customizer-options.php:79
+msgid "Summation Child Theme"
+msgstr ""
+
+#: includes/admin/css-editor.php:143
+msgid "CSS Editor"
+msgstr ""
+
+#: includes/admin/css-editor.php:154
+msgid "Close"
+msgstr ""
+
+#: includes/admin/css-editor.php:155
+msgid "Save Changes"
+msgstr ""
+
+#: includes/admin/customizer-options.php:30
+msgid "Main Hero Image"
+msgstr ""
+
+#: includes/admin/customizer-options.php:36
+msgid "Hero Header Color"
+msgstr ""
+
+#: includes/admin/customizer-options.php:42
+msgid "Hero Text Color"
+msgstr ""
+
+#: includes/admin/customizer-options.php:80
+msgid "Customizer settings for the Summation child theme."
+msgstr ""
+
+#: includes/admin/customizer-options.php:86 includes/admin/sidebars.php:20
+msgid "Front Page"
+msgstr ""
+
+#: includes/admin/customizer-options.php:87
+msgid "Front page images and colors."
+msgstr ""
+
+#: includes/admin/customizer-options.php:92
+msgid "Global Widgets"
+msgstr ""
+
+#: includes/admin/customizer-options.php:93
+msgid "Widgets displayed across the entire site."
+msgstr ""
+
+#: includes/admin/customizer-options.php:99
+msgid "Social Follow Background Color"
+msgstr ""
+
+#: includes/admin/customizer-options.php:106
+msgid "Miscellaneous"
+msgstr ""
+
+#: includes/admin/customizer-options.php:107
+msgid "Miscellaneous settings."
+msgstr ""
+
+#: includes/admin/customizer-options.php:113
+msgid "Favicon"
+msgstr ""
+
+#: includes/admin/customizer-options.php:118
+msgid "Logo Image"
+msgstr ""
+
+#: includes/admin/customizer-options.php:124
+msgid "Logo Width"
+msgstr ""
+
+#: includes/admin/customizer-options.php:125
+msgid "Default: 360px"
+msgstr ""
+
+#: includes/admin/customizer-options.php:130
+msgid "Logo Height"
+msgstr ""
+
+#: includes/admin/customizer-options.php:131
+msgid "Default: 80px"
+msgstr ""
+
+#: includes/admin/customizer-options.php:136
+msgid "Sticky Header"
+msgstr ""
+
+#: includes/admin/customizer-options.php:137
+msgid "Stick header to top of screen when scrolling up."
+msgstr ""
+
+#: includes/admin/customizer-options.php:142
+msgid "Scroll to Top"
+msgstr ""
+
+#: includes/admin/customizer-options.php:143
+msgid "Enable a scroll-to-top button."
+msgstr ""
+
+#: includes/admin/process-ajax.php:23
+msgid "Permissions failed."
+msgstr ""
+
+#: includes/admin/process-ajax.php:31
+msgid "Changes saved!"
+msgstr ""
+
+#: includes/admin/settings.php:30
+msgid "Summation Child Theme Settings"
+msgstr ""
+
+#: includes/admin/settings.php:52 includes/admin/settings.php:56
+msgid "Frontend CSS Editor"
+msgstr ""
+
+#: includes/admin/settings.php:61
+msgid "Enable Editor"
+msgstr ""
+
+#: includes/admin/settings.php:69 includes/admin/settings.php:73
+msgid "Author Box"
+msgstr ""
+
+#: includes/admin/settings.php:78
+msgid "Enable on single posts"
+msgstr ""
+
+#: includes/admin/settings.php:86 includes/admin/settings.php:90
+msgid "Custom Footer"
+msgstr ""
+
+#: includes/admin/settings.php:102 includes/admin/settings.php:106
+msgid "Customizer"
+msgstr ""
+
+#: includes/admin/settings.php:108
+msgid ""
+"For more customizations, open the WordPress Customizer and see the Summation "
+"Genesis panel."
+msgstr ""
+
+#: includes/admin/settings.php:108
+msgid "Open Customizer"
+msgstr ""
+
+#: includes/admin/sidebars.php:12
+msgid "Front Page Hero"
+msgstr ""
+
+#: includes/admin/sidebars.php:13
+msgid "This is the main/her section of the front page."
+msgstr ""
+
+#: includes/admin/sidebars.php:28
+msgid "Social Follow"
+msgstr ""
+
+#: includes/admin/sidebars.php:29
+msgid "Insert social follow links (displayed globally)"
+msgstr ""
+
+#: includes/comments.php:17
+#, php-format
+msgid "1 Comment"
+msgid_plural "%s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/comments.php:19
+msgid "What readers are saying..."
+msgstr ""
+
+#: includes/comments.php:23
+msgid "What readers are saying... (No Comments)"
+msgstr ""
+
+#: includes/enqueues.php:41
+msgid "No changes were made."
+msgstr ""
+
+#: includes/enqueues.php:42
+msgid "Saving..."
+msgstr ""
+
+#: includes/footer.php:36
+msgid "Return to top"
+msgstr ""
+
+#: includes/footer.php:42
+msgid "built for the "
+msgstr ""
+
+#: includes/footer.php:42
+msgid "Genesis Framework"
+msgstr ""
+
+#: includes/hero.php:65
+#, php-format
+msgid "%s Comment"
+msgid_plural "%s Comments"
+msgstr[0] ""
+msgstr[1] ""

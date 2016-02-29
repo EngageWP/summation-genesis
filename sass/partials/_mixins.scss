@@ -1,0 +1,29 @@
+/**
+ *	Transition
+ *	Usage: @include transition(all, 0.2s, ease-in-out);
+ */
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+/**
+ *	Transition
+ *	Usage: @include dashed-border(3px); (no paramters for default 1px)
+ */
+@mixin dashed-border( $width: 1px ) {
+	border: $width dashed darken($color-gray,20%);
+}
+
+/**
+ *	Transition
+ *	Usage: @include shadow( 1, 1, 1, 1, #000000 ); (leave color parameter for default)
+ */
+@mixin shadow( $top, $right, $bottom, $left, $color: $color-gray ) {
+	// @include box-shadow( left, right, bottom, top );
+	// @include box-shadow( $color $hoff $voff $blur $spread $inset, $color $hoff $voff $blur $spread $inset );
+	@include box-shadow( $color $left + px 0 0 0, $color ($right * -1) + px 0 0 0, $color 0 $bottom + px 3px 0, $color 0 ($top * -1) + px 0 0 );
+}
