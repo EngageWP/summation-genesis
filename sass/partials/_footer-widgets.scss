@@ -1,6 +1,75 @@
+/* Social Following widget area
+--------------------------------------------- */
+
+.social-following {
+	margin-bottom: 50px;
+	padding: 50px 0;
+	text-align: center;
+	i {
+		color: $color-header;
+		display: inline-block;
+		font-size: 3em;
+		margin: .25em;
+		&:hover {
+			&.twitter {
+				color: $twitter;
+			}
+			&.facebook {
+				color: $facebook;
+			}
+			&.pinterest {
+				color: $pinterest;
+			}
+			&.linkedin {
+				color: $linkedin;
+			}
+		}
+	}
+	.widget:not(:last-of-type)::after {
+		content: " ";
+		border-bottom: 2px inset darken($color-gray,3%);
+		display: block;
+		margin: 50px auto 0;
+		width: 60%;
+	}
+	.enews-widget {
+		input:not([type="submit"]) {
+			display: inline-block;
+			margin: 0 0.5%; 
+			width: 27%;
+		}
+		input[type="submit"] {
+			display: inline-block;
+			margin: 0;
+			width: auto;
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.social-following {
+		.enews-widget {
+			input:not([type="submit"]) {
+				display: block;
+				margin: 10px auto; 
+				width: 100%;
+			}
+			input[type="submit"] {
+				display: block;
+				margin: 0 auto;
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+/* Footer Widgets
+--------------------------------------------- */
 .footer-widgets {
 	background-color: #fff;
 	clear: both;
+	font-size: $font-size-alt;
 	margin-bottom: 40px;
 	&,
 	a {

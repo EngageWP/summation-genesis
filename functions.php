@@ -39,6 +39,7 @@ include_once 'includes/hero.php';
 include_once 'includes/post-info-meta.php';
 include_once 'includes/post-nav.php';
 include_once 'includes/schemas.php';
+include_once 'includes/share-buttons.php';
 
 // Add HTML5 markup structure
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );

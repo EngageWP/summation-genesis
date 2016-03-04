@@ -22,11 +22,11 @@ function summation_genesis_post_nav() {
 	echo '<div class="single-post-nav clearfix">';
 
 	if ( $prev ) {
-		printf( '<a href="%s" class="previous-post"><span class="post-nav-direction">%s</span>%s</a>', get_permalink( $prev->ID ), __( '&lt; Previous', 'summation-genesis' ), get_the_title( $prev->ID ) );
+		printf( '<p id="previous-post"><a href="%s"><span class="post-nav-direction">%s</span>%s</a></p>', get_permalink( $prev->ID ), __( '&lt; Previous', 'summation-genesis' ), get_the_title( $prev->ID ) );
 	}
 
 	if ( $next ) {
-		printf( '<a href="%s" class="next-post"><span class="post-nav-direction">%s</span>%s</a>', get_permalink( $next->ID ), __( 'Next &gt;', 'summation-genesis' ), get_the_title( $next->ID ) );
+		printf( '<p id="next-post"><a href="%s"><span class="post-nav-direction">%s</span>%s</a></p>', get_permalink( $next->ID ), __( 'Next &gt;', 'summation-genesis' ), get_the_title( $next->ID ) );
 	}
 
 	echo '</div>';

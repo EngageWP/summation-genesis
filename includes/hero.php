@@ -75,4 +75,16 @@ function summation_genesis_hero_close() {
 	}
 
 	echo '</div></div></div></div>';
+
+	// Social buttons
+	$buttons = summation_genesis_get_share_buttons();
+
+	echo '<div class="social-buttons">';
+
+	foreach( $buttons as $key => $button ) {
+
+		printf( "<a href='%s' class='social-button $key' target='_blank'>%s %s</a>", $button['url'], $button['icon'], $button['button_text'] );		
+	}
+
+	echo '</div>';
 }

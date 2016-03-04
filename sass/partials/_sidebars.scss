@@ -1,4 +1,5 @@
 .sidebar {
+	border-left: 1px solid darken($color-gray,3%);
 	font-size: 16px;
 	li {
 		border-bottom: 1px dotted #ddd;
@@ -11,8 +12,14 @@
 	}
 	.widget {
 		background-color: #fff;
-		box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
 		margin-bottom: 0;
-		padding: 40px;
+		padding: 40px 40px 0;
+		&:not(:last-of-type)::after {
+			content: " ";
+			border-bottom: 2px solid darken($color-gray,3%);
+			display: block;
+			margin: 40px auto 0;
+			width: 100%;
+		}
 	}
 }

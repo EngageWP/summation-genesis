@@ -80,3 +80,47 @@
 		}
 	}
 }
+
+/* Social buttons
+--------------------------------------------- */
+
+.social-buttons {
+	background-color: $color-gray;
+	padding: 30px;
+	text-align: center;
+	.social-button {
+		@include border-radius(300px);
+		color: #fff;
+		display: inline-block;
+		margin: 0 5px;
+		padding: 10px 30px;
+		&.facebook {
+			background-color: $facebook;
+			&:hover {
+				background-color: lighten($facebook,10%);
+			}
+		}
+		&.twitter {
+			background-color: $twitter;
+			&:hover {
+				background-color: lighten($twitter,10%);
+			}
+		}
+		&.pinterest {
+			background-color: $pinterest;
+			&:hover {
+				background-color: lighten($pinterest,10%);
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.social-buttons {
+		.social-button {
+			display: block;
+			margin: 10px 0;
+			width: 100%;
+		}
+	}
+}

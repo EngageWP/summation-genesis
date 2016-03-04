@@ -23,14 +23,15 @@
 			font-size: 12px;
 			text-transform: uppercase;
 		}
-		a {
+		#previous-post,
+		#next-post {
 			display: inline-block;
 			width: 50%;
 		}
-		.previous-post {
+		#previous-post {
 			text-align: left;
 		}
-		.next-post {
+		#next-post {
 			float: right;
 			text-align: right;
 		}
@@ -40,6 +41,7 @@
 	.author-box {
 		background-color: $color-gray;
 		@include dashed-border();
+		font-size: $font-size-alt;
 		margin-bottom: 50px;
 		padding: 20px;
 		.avatar {
