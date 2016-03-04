@@ -9,3 +9,7 @@ Upload to wp-content/themes, or via the WordPress theme uploader. [Genesis is re
 ## Theme Support
 
 Please visit http://www.engagewp.com/ for theme support.
+
+## TO-DO
+
+1. Settings for share buttons
