@@ -98,23 +98,127 @@
 --------------------------------------------- */
 
 .nav-primary {
-	background-color: #333;
+	background-color: #fff;
 	a {
-		color: #fff;
+		color: $color-font;
 	}
 	.sub-menu a {
-		color: #333;
+		color: $color-font;
 	}
 	a:hover,
 	.current-menu-item > a,
 	.sub-menu .current-menu-item > a:hover {
-		color: #e5554e;
+		color: $color-link;
 	}
 }
 
-/* Secondary Navigation
+
+
+/* Mobile menu
 --------------------------------------------- */
 
-.nav-secondary {
-	background-color: #fff;
+.admin-bar {
+	#summation-mobile-menu {
+		top: 32px;
+		height: calc( 100vh - 32px );
+	}
+	.summation-mobile-menu-open {
+		top: 82px;
+	}
+}
+
+#summation-mobile-menu-close-container {
+	display: block;
+	text-align: right;
+}
+
+.summation-mobile-menu-open,
+#summation-mobile-menu-close {
+	color: #fff;
+	font-size: 2em !important;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.summation-mobile-menu-open {
+	display: none !important;
+	position: absolute;
+	right: 30px;
+	top: 50px;
+}
+
+.header-clone .summation-mobile-menu-open {
+	top: 40px;
+}
+
+#summation-mobile-menu-close {
+	margin: 10px;
+}
+
+#summation-mobile-menu {
+	background-color: #414562;
+	height: 100vh;
+	max-width: 500px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding: 20px;
+	position: fixed;
+	right: -500px;
+	top: 0;
+	width: 95%;
+	z-index: 99;
+	&.open,
+	&.close {
+		transition: 1s;
+		-webkit-transition-duration: 600ms;
+		transition-duration: 600ms;
+	}
+	&.open {
+		right: 0;
+	}
+	&.close {
+		right: -500px;
+	}
+	.menu {
+		.menu-item {
+			display: block;
+			width: 100%;
+			.sub-menu {
+				border: none;
+				left: 0;
+				margin-left: 30px;
+				opacity: 1;
+				position: static;
+				width: 100%;
+				a {
+					background-color: transparent;
+					border: none;
+					color: #fff;
+					font-size: $font-size-alt;
+					padding: 5px 20px;
+					position: relative;
+					width: 100%;
+				}
+			}
+		}
+	}
+	.nav-button {
+		width: auto !important;
+		a {
+			background-color: #fff;
+			display: inline-block;
+			margin: 0 auto;
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.nav-primary,
+	.nav-header {
+		display: none;
+	}
+	.summation-mobile-menu-open {
+		display: block !important;
+	}
 }

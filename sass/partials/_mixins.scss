@@ -27,3 +27,26 @@
 	// @include box-shadow( $color $hoff $voff $blur $spread $inset, $color $hoff $voff $blur $spread $inset );
 	@include box-shadow( $color $left + px 0 0 0, $color ($right * -1) + px 0 0 0, $color 0 $bottom + px 3px 0, $color 0 ($top * -1) + px 0 0 );
 }
+
+@mixin spin() {
+	-webkit-animation-name: spin;
+	-webkit-animation-duration: 300ms;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-name: spin;
+	-moz-animation-duration: 300ms;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: linear;
+	-ms-animation-name: spin;
+	-ms-animation-duration: 300ms;
+	-ms-animation-iteration-count: 1;
+	-ms-animation-timing-function: linear;
+	@-webkit-keyframes spin {
+		from {
+			-webkit-transform:rotate(0deg);
+		}
+		to {
+			-webkit-transform:rotate(360deg);
+		}
+	}
+}

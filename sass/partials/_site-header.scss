@@ -3,7 +3,8 @@
 	@include transition(top, 0.2s, ease-in-out);
 	width: 100%;
 	.wrap {
-		margin: 15px auto;
+		margin: 0 auto;
+		padding: 20px;
 	}
 	.nav-header ul:not( .sub-menu ) > li > a {
 		color: #fff;
@@ -16,9 +17,9 @@
 		position: fixed;
 		left: 0;
 		top: 0;
-		z-index: 99;
+		z-index: 98;
 		.wrap {
-			margin: 15px auto;
+			margin: 0 auto;
 		}
 	}
 }
@@ -93,5 +94,14 @@
 	}
 	.site-logo-wrap.header-title {
 		text-align: center;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	body.js .header-logo {
+		.logo-image.aligncenter {
+			display: inline-block;
+			margin: 0;
+		}
 	}
 }

@@ -125,6 +125,9 @@
 		right: 5px;
 	}
 	@media only screen and (max-width: 768px) {
+		#editor {
+			width: 100%;
+		}
 		#summation-css-editor-form {
 			left: 5%;
 			width: 90%;
@@ -132,7 +135,7 @@
 		.controls {
 			position: relative;
 			right: 0;
-			top: -85px;
+			top: -25px;
 		}
 		.control {
 			float: left;

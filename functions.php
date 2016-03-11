@@ -47,6 +47,9 @@ add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list'
 // Add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
 
+// Unregister secondary navigation menu
+add_theme_support( 'genesis-menus', array( 'primary' => __( 'Primary Navigation Menu', 'summation-genesis' ) ) );
+
 // After-Entry widget area
 add_theme_support( 'genesis-after-entry-widget-area' );
 

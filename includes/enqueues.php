@@ -22,6 +22,10 @@ function summation_genesis_enqueues() {
 
 	// Add compiled JS
 	wp_enqueue_script( 'summation-scripts', CHILD_THEME_DIRECTORY_URL . 'js/min/project-min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_localize_script( 'summation-scripts', 'summation', array(
+		'open_menu_text' => __( 'Open Menu', 'summation-genesis' ),
+		'close_menu_text' => __( 'Close Menu', 'summation-genesis' ),
+	) );
 
 	// CSS Editor
 	if ( current_user_can( 'manage_options' ) && genesis_get_option( 'summation_genesis_enable_css_editor' ) ) {

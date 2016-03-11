@@ -116,7 +116,8 @@ pre {
 	background-color: $color-gray;
 	border-left: 10px solid darken($color-gray,10%);
 	font-family: Courier, sans-serif;
-	font-size: $font-size;
+	font-size: $font-size-alt;
+	line-height: 1.5;
 	margin: 30px 0;
 	padding: 24px;
 }
@@ -128,18 +129,22 @@ code {
 /* Helper classes
 --------------------------------------------- */
 
+.spin {
+    @include spin();
+}
+
 .pull-right {
 	float: right;
 	position: relative;
-	right: -30%;
-	min-width: 130%;
+	right: -50%;
+	min-width: 150%;
 }
 
 .pull-left {
 	float: left;
 	position: relative;
-	left: -30%;
-	min-width: 130%;
+	left: -50%;
+	min-width: 150%;
 }
 
 .text-right {

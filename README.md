@@ -13,3 +13,4 @@ Please visit http://www.engagewp.com/ for theme support.
 ## TO-DO
 
 1. Settings for share buttons
+2. Make share buttons show on posts w/o hero image
