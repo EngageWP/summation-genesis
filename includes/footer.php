@@ -7,7 +7,7 @@
  */
 
 /**
- *	Social Follow links
+ *	Social Follow widget area
  */
 add_action( 'genesis_before_footer', 'summation_genesis_social_follow_footer', 5 );
 function summation_genesis_social_follow_footer() {

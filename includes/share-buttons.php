@@ -33,8 +33,8 @@ function summation_genesis_get_share_buttons( $post_id = '' ) {
 	$title = urlencode( $post->post_title );
 	$thumbnail = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
 
-	$twitter_via = $options['summation_genesis_share_button_via'];
-	$twitter_related = $options['summation_genesis_share_button_related_accounts'];
+	$twitter_via = str_replace( '@', '', $options['summation_genesis_share_button_via'] );
+	$twitter_related = str_replace( '@', '', $options['summation_genesis_share_button_related_accounts'] );
 
 	$buttons = array(
 		'facebook' => array(
@@ -43,11 +43,9 @@ function summation_genesis_get_share_buttons( $post_id = '' ) {
 			'button_text' => __( 'Share it', 'summation-genesis' ),
 		),
 		'twitter' => array(
-			'url' => add_query_arg( array( 'text' => $title, 'url' => $url, 'via' => $twitter_via, 'related' => $twitter_related ), 'https://twitter.com/intent/tweet' ),
+			'url' => add_query_arg( array( 'text' => $title, 'url' => $url ), 'https://twitter.com/intent/tweet' ),
 			'icon' => '<i class="fa fa-twitter"></i>',
 			'button_text' => __( 'Tweet it', 'summation-genesis' ),
-			'via' => isset( $twitter_via ) ? $twitter_via : '',
-			'related' => isset( $twitter_related ) ? $twitter_related : '',
 		),
 		'pinterest' => array(
 			'url' => add_query_arg( array( 'url' => $url, 'description' => $title, 'media' => $thumbnail ), 'http://pinterest.com/pin/create/button' ),
@@ -55,6 +53,18 @@ function summation_genesis_get_share_buttons( $post_id = '' ) {
 			'button_text' => __( 'Pin it', 'summation-genesis' ),
 		),
 	);
+
+	// Twitter "via @...""
+	if ( isset( $twitter_via ) && $twitter_via != '' ) {
+		$buttons['twitter']['url'] = add_query_arg( 'via', $twitter_via, $buttons['twitter']['url'] );
+		$buttons['twitter']['via'] = $twitter_via;
+	}
+
+	// Related accounts
+	if ( isset( $twitter_related ) && $twitter_related != '' ) {
+		$buttons['twitter']['url'] = add_query_arg( 'related', $twitter_related, $buttons['twitter']['url'] );
+		$buttons['twitter']['related'] = $twitter_related;
+	}
 
 	foreach( $activated as $key => $value ) {
 		if ( $value == 1 ) {
@@ -78,6 +88,11 @@ function summation_genesis_header_social_buttons() {
 		return;
 	}
 
+	// Bail if front page
+	if ( is_front_page() ) {
+		return;
+	}
+
 	$post_types = genesis_get_option( 'summation_genesis_share_button_post_types' );
 
 	if ( ! $post_types ) {
@@ -86,6 +101,13 @@ function summation_genesis_header_social_buttons() {
 
 	// Bail if sharing is not enabled for this post type
 	if ( ! array_key_exists( $post->post_type, $post_types ) ) {
+		return;
+	}
+
+	$disabled = get_post_meta( $post->ID, 'summation_genesis_disable_share_buttons' );
+
+	// Bail if buttons are disabled for this post
+	if ( $disabled ) {
 		return;
 	}
 
@@ -105,4 +127,59 @@ function summation_genesis_header_social_buttons() {
 	}
 
 	echo '</div>';
+}
+
+// Meta box for disabling share buttons
+add_action( 'admin_init', 'summation_genesis_disable_share_buttons', 1 );
+function summation_genesis_disable_share_buttons() {
+	$post_types = get_option( 'genesis-settings' )['summation_genesis_share_button_post_types'];
+	$post_types = isset( $post_types ) ? array_keys( $post_types ) : '';
+	add_meta_box( 'summation-genesis-disable-share-buttons', 'Summation Share Buttons', 'summation_genesis_disable_share_buttons_callback', $post_types, 'side' );
+}
+
+function summation_genesis_disable_share_buttons_callback() {
+
+	global $post;
+
+	$disabled = get_post_meta( $post->ID, 'summation_genesis_disable_share_buttons' );
+	
+	?>
+
+	<p>
+		<label>
+			<input type="checkbox" name="summation_genesis_disable_share_buttons" value="1" <?php checked( intval( $disabled ), 1 ); ?> />
+			Disable Share Buttons
+		</label>
+		<?php wp_nonce_field( 'summation_genesis_disable_share_buttons_nonce', 'summation_genesis_disable_share_buttons_nonce' ); ?>
+	</p>
+
+	<span class="description">Disable the share buttons on this post.</span>
+	
+	<?php
+}
+
+add_action( 'save_post', 'summation_genesis_social_buttons_save_post' );
+function summation_genesis_social_buttons_save_post( $post_id ) {
+
+	if ( ! isset( $_POST['summation_genesis_disable_share_buttons_nonce'] ) || ! wp_verify_nonce( $_POST['summation_genesis_disable_share_buttons_nonce'], 'summation_genesis_disable_share_buttons_nonce' ) ) {
+		return;
+	}
+
+	if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
+	}
+
+	$old = intval( get_post_meta( $post_id, 'summation_genesis_disable_share_buttons', true ) );
+
+	$new = isset( $_POST['summation_genesis_disable_share_buttons'] ) ? intval( $_POST['summation_genesis_disable_share_buttons'] ) : '';
+
+	if ( $new == '' && $old ) { // Deleted
+		delete_post_meta( $post_id, 'summation_genesis_disable_share_buttons' );
+	} elseif ( $new && ! $old ) { // Added
+		update_post_meta( $post_id, 'summation_genesis_disable_share_buttons', $new );
+	}
 }

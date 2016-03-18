@@ -131,6 +131,7 @@
 		#summation-css-editor-form {
 			left: 5%;
 			width: 90%;
+			top: 60px;
 		}
 		.controls {
 			position: relative;

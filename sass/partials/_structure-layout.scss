@@ -55,10 +55,15 @@
 	padding: 0 80px;
 }
 
+.content-sidebar .content,
+.sidebar-content .content {
+	width: 70%;
+}
+
 .content-sidebar-sidebar .content,
 .sidebar-content-sidebar .content,
 .sidebar-sidebar-content .content {
-	width: 520px;
+	width: 55%;
 }
 
 .full-width-content .content {
@@ -70,7 +75,7 @@
 
 .sidebar-primary {
 	float: right;
-	width: 360px;
+	width: 30%;
 }
 
 .sidebar-content .sidebar-primary,
@@ -82,7 +87,7 @@
 
 .sidebar-secondary {
 	float: left;
-	width: 180px;
+	width: 15%;
 }
 
 .content-sidebar-sidebar .sidebar-secondary {
@@ -143,4 +148,66 @@
 .first {
 	clear: both;
 	margin-left: 0;
+}
+
+
+@media only screen and (max-width: 1023px) {
+
+	.site-inner,
+	.wrap {
+		max-width: 100% !important;
+	}
+
+	.entry {
+		border: none;
+	}
+
+	.content-sidebar .content,
+	.content-sidebar-sidebar .content,
+	.sidebar-content-sidebar .content {
+		float: left;
+		padding: 0 40px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+
+	.wrap {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.five-sixths,
+	.four-sixths,
+	.one-fourth,
+	.one-half,
+	.one-sixth,
+	.one-third,
+	.three-fourths,
+	.three-sixths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds {
+		margin: 0;
+		width: 100%;
+	}
+
+	.content,
+	.content-sidebar-sidebar .content,
+	.content-sidebar-sidebar .content-sidebar-wrap,
+	.sidebar-content-sidebar .content,
+	.sidebar-content-sidebar .content-sidebar-wrap,
+	.full-width-content .content,
+	.sidebar-primary,
+	.sidebar-secondary,
+	.sidebar-sidebar-content .content,
+	.sidebar-sidebar-content .content-sidebar-wrap {
+		width: 100% !important;
+	}
+
+	.content-sidebar .content,
+	.content-sidebar-sidebar .content,
+	.sidebar-content-sidebar .content {
+		padding: 0;
+	}
 }

@@ -25,6 +25,12 @@ body {
 	margin: 0;
 }
 
+@media only screen and (max-width: 768px) {
+	body {
+		font-size: 16px;
+	}
+}
+
 a,
 button,
 input:focus,
@@ -129,6 +135,30 @@ code {
 /* Helper classes
 --------------------------------------------- */
 
+.bold {
+	font-weight: bold;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.justify {
+	text-align: justify;
+}
+
 .spin {
     @include spin();
 }
@@ -147,14 +177,10 @@ code {
 	min-width: 150%;
 }
 
-.text-right {
-	text-align: right;
-}
-
 .widen {
-	left: -150px;
+	left: -15%;
 	position: relative;
-	width: 1000px;
+	width: 130%;
 	max-width: 1000px;
 }
 
@@ -175,22 +201,28 @@ code {
 
 @media only screen and (max-width: 1023px) {
 	.widen {
-		left: -100px;
-		position: relative;
-		width: 900;
-		max-width: 900;
+		left: 0;
+		width: 100%;
+		max-width: 100%;
+		overflow-x: scroll;
 	}
 }
 
 @media only screen and (max-width: 768px) {
-	.widen {
-		width: 100%;
-		max-width: 100%;
-	}
 	.full-width {
 		left: 0;
 		width: 100%;
 		max-width: 100%;
+	}
+	.pull-right {
+		display: block !important;
+		float: none;
+	}
+	.pull-right,
+	.pull-left {
+		left: 0;
+		right: 0;
+		min-width: 100%;
 	}
 }
 

@@ -115,7 +115,7 @@ function summation_genesis_front_page_hero_content() {
 		return;
 	}
 
-	for ( $i = 1; $i < CHILD_THEME_FRONT_PAGE_WIDGET_AREAS; $i++ ) {
+	for ( $i = 1; $i <= CHILD_THEME_FRONT_PAGE_WIDGET_AREAS; $i++ ) {
 
 		// Skip if sidebar has no widgets
 		if ( ! is_active_sidebar( "front-page-$i" ) ) {

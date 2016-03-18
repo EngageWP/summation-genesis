@@ -13,7 +13,6 @@ add_action( 'wp_enqueue_scripts', 'summation_genesis_enqueues' );
 function summation_genesis_enqueues() {
 
 	// Google fonts
-	wp_enqueue_style( 'google-font-open-sans', '//fonts.googleapis.com/css?family=Open+Sans:400italic,400,700', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'google-font-montserrat', '//fonts.googleapis.com/css?family=Montserrat:400,700', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'google-font-ptserif', '//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700', array(), CHILD_THEME_VERSION );
 
