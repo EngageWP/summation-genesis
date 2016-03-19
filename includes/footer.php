@@ -39,7 +39,7 @@ function summation_genesis_footer() {
 	if ( $footer ) {
 		echo do_shortcode( $footer );
 	} else {
-		printf( '<p><i class="fa fa-heart"></i> %s <a href="%s">%s</a></p>', CHILD_THEME_NAME . ' ' . __( 'built for the ', 'summation-genesis' ), 'http://www.engagewp.com/go/studiopress', __( 'Genesis Framework', 'summation-genesis' ) );
+		printf( '<p><i class="fa fa-heart"></i> <a href="%s" target="_blank">%s</a> %s</p>', 'https://www.engagewp.com/downloads/summation-genesis/', CHILD_THEME_NAME, __( 'built for the Genesis Framework', 'summation-genesis' ) );
 	}
 }
 
